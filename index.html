@@ -23,10 +23,46 @@
           <p><a href="#add" data-role="button">Add a ToDo</a></p>
           <p><a href="index.html" id="clear-button" data-role="button" data-theme="b">Clear all Todos</a></p>
           <ul id="todos" data-role="listview" data-filter="true" data-filter-placeholder="Search Todos.." data-inset="true">
-            <li>Pick up kids from School</li>
-            <li>Meeting with boss</li>
-            <li>Dinner with wife</li>
+              <li>Pick up kids from School</li>
+              <li>Meeting with boss</li>
+              <li>Dinner with wife</li>
           </ul>
+      </main>
+      <footer data-role="footer" id="footer">
+          <h4>MobileToDo &copy; 2020</h4>
+      </footer>
+  </div>
+
+  <!-- Add Page -->
+  <div data-role="page" id="add">
+      <header data-role="header">
+          <a href="index.html" id="cancel-btn" data-icon="delete">Cancel</a>
+          <h1>Add a Todo</h1>
+          <a href="index.html" data-icon="check" data-theme="b" onclick="$('#add-form').submit();">Save</a>
+      </header>
+      <main data-role="content" id="content">
+         <form id="add-form">
+             <input type="text" name="todo-name" id="todo-name" placeholder="Add Todo name">
+             <input type="date" name="todo-date" id="todo-date">
+         </form>
+      </main>
+      <footer data-role="footer" id="footer">
+          <h4>MobileToDo &copy; 2020</h4>
+      </footer>
+  </div>
+  <!-- Edit Page -->
+  <div data-role="page" id="edit">
+      <header data-role="header">
+          <a href="index.html" id="cancel-btn" data-icon="delete">Cancel</a>
+          <h1>Edit Todo</h1>
+          <a href="index.html" data-icon="check" data-theme="b" onclick="$('#edit-form').submit();">Save</a>
+      </header>
+      <main data-role="content" id="content">
+          <form id="edit-form">
+              <input type="text" name="todo-name" id="todo-name" placeholder="Add Todo name">
+              <input type="date" name="todo-date" id="todo-date">
+              <a href="#" id="delete" data-role="button">Delete</a>
+          </form>
       </main>
       <footer data-role="footer" id="footer">
           <h4>MobileToDo &copy; 2020</h4>
