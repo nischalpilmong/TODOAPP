@@ -49,4 +49,46 @@ var todoList = JSON.parse(localStorage.getItem('todos'));
         }
 
     });
+
+     //Delete Todo
+     $('#edit-form').on('click','#delete',function(){
+          currentTodoName = localStorage.getItem('currentTodoName');
+          currentTodoDate = localStorage.getItem('currentTodoDate');
+
+         //Loop through todos
+         for(i=0; i< todo-list.length;i++){
+             if(todo-list[i].todo_name == currentTodoName){
+                 todo-list.splice(i,1);
+             }
+             localStorage.setItem('todos',JSON.stringify(todo-list));
+         }
+         //Close and go home
+         $.mobile.changePage($('#home'),'pop')
+     });
+
+     $('#todo-list').on('click','#todo-link',function(){
+        localStorage.setItem('currentTodoName',$(this).data('todo_name'));
+         localStorage.setItem('currentTodoDate',$(this).data('todo_date'));
+     });
+
+     $('document').on('pageshow','#edit', function(){
+
+          currentTodoName = localStorage.getItem('currentTodoName');
+          currentTodoDate = localStorage.getItem('currentTodoDate');
+        $('#edit-form input[name="todo-name"]',this).val(currentTodoName);
+         $('#edit-form input[name="todo-date"]',this).val(currentTodoDate);
+     });
+
+
+     $('document').on('pageshow','#edit', function(){
+
+        window.location.reload();
+     });
+
+     //Clear ToDos
+     $('#clear-button').click(function(){
+         localStorage.clear();
+     });
 });
+
+

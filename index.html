@@ -16,13 +16,13 @@
 </head>
 <body>
   <!-- Home Page -->
-  <div data-role="page" id="Home">
+  <div data-role="page" id="home">
       <header data-role="header">
           <h1>Mobile To Do</h1>
       </header>
       <main data-role="content" id="content">
           <p><a href="#add" data-role="button">Add a ToDo</a></p>
-          <p><a href="index.html" id="clear-button" data-role="button" data-theme="b">Clear all Todos</a></p>
+          <p><a href="index.html" id="clear-button" data-ajax="false" data-role="button" data-theme="b">Clear all Todos</a></p>
           <ul id="todo-list" data-role="listview" data-filter="true" data-filter-placeholder="Search Todos.." data-inset="true">
 
           </ul><!--unordered list for TODO tasks -->
@@ -58,8 +58,8 @@
       </header>
       <main data-role="content" id="content">
           <form id="edit-form">
-              <input type="text" name="todo-name" id="todo-name" placeholder="Add Todo name">
-              <input type="date" name="todo-date" id="todo-date">
+              <input type="text" name="todo-name" id="todo_name" placeholder="Add Todo name">
+              <input type="date" name="todo-date" id="todo_date">
               <a href="#" id="delete" data-role="button">Delete</a>
           </form>
       </main>
