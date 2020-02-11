@@ -6,8 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDo App</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/main.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.2.js"></script>
 </head>
 <body>
-
+  <!-- Home Page -->
+  <div data-role="page" id="Home">
+      <header data-role="header">
+          <h1>Mobile To Do</h1>
+      </header>
+      <main data-role="content" id="content">
+          <p><a href="#add" data-role="button">Add a ToDo</a></p>
+          <p><a href="index.html" id="clear-button" data-role="button" data-theme="b">Clear all Todos</a></p>
+          <ul id="todos" data-role="listview" data-filter="true" data-filter-placeholder="Search Todos.." data-inset="true">
+            <li>Pick up kids from School</li>
+            <li>Meeting with boss</li>
+            <li>Dinner with wife</li>
+          </ul>
+      </main>
+      <footer data-role="footer" id="footer">
+          <h4>MobileToDo &copy; 2020</h4>
+      </footer>
+  </div>
 </body>
 </html>
