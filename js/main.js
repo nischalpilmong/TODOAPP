@@ -1,5 +1,8 @@
 /* Add Todo */
 
+var todoList = JSON.parse(localStorage.getItem('todos'));
+
+
  $(document).ready(function() {
     $('#add-form').submit(function(){
         //Get submitted values
