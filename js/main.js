@@ -4,6 +4,23 @@ var todoList = JSON.parse(localStorage.getItem('todos'));
 
 
  $(document).ready(function() {
+     //Set Counter
+     var i = 0;
+     //check for todos
+     if(localStorage.getItem('todos') != null){
+         //Loop through and output li items
+         $.each(todoList,function(key,value){
+            $('#todo-list').prepend('<li id= "task-'+i+'"><a id="todo-link" href="#edit" data-todo_name="'+ value.todo_name +'"data-todo_date="'+ value.todo_date +'">'+ value.todo_name + '</a></li>');
+            i++;
+         });
+         //Refresh
+         $('#todo-list').listview('refresh');
+     }
+
+
+
+
+
     $('#add-form').submit(function(){
         //Get submitted values
         var todo_name = $('#todo-name').val();
